@@ -49,7 +49,7 @@
 } */
 
 
-
+/* 
 .circle{
     width: 150px;
     height: 150px;
@@ -78,7 +78,7 @@
     height: 200%;
     top:0;
     left: 50%;
-    transform: translate(-50%, -75%);
+    transform: translate(-50%, -10%);
     background-color: #000;
 }
 
@@ -96,10 +96,10 @@
 
 @keyframes wave{
     0%{
-        transform: translate(-50%, -75%) rotate(0deg);
+        transform: translate(var(--x), var(--y)) rotate(0deg);
     }
     100%{
-        transform: translate(-50%, -75%) rotate(360deg);
+        transform: translate(var(--x), var(--y)) rotate(360deg);
     }
 }
 
@@ -108,4 +108,34 @@
     justify-content: center;
     align-items: center;
     gap: .5em;
-}
+} */
+
+
+
+.wave {
+    position: absolute;
+    right: -30%;
+    width: 160%;
+    height: 160%;
+    transform-origin: 50% 50%;
+    border-radius: 78% 56%;
+    animation: spin 5s infinite linear;
+    background-color: rgb(211, 205, 47);
+    margin-top: 7em;
+    }
+    
+    .circle{
+      width:200px;
+      height: 200px;
+      position: relative;
+      background-color: #fff;
+      overflow: hidden;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+    
+    @keyframes spin{
+      100%{
+        transform:rotate(360deg);
+      }
+    }

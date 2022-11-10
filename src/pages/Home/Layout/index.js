@@ -2,7 +2,20 @@ import React from 'react'
 import Bubble from '../components/Bubble'
 import NavBar from '../components/Navbar';
 import "./styles.css"
-const bubbles = [1,2,3];
+const bubbles = [
+    {
+        perc:50,
+        color: "red",
+    },
+    {
+        perc: 30,
+        color:"blue"
+    },
+    {
+        per:80,
+        color:"#eeff44"
+    }
+];
 const Home = () => {
   return (
     <>
@@ -15,7 +28,7 @@ const Home = () => {
             <div className='bubble-container'>
                 {
                     bubbles.map(bubble => (
-                        <Bubble/>
+                        <Bubble perc={bubble.perc} color={bubble.color}/>
                     ))
                 }
             </div>
