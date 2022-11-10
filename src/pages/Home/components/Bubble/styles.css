@@ -1,0 +1,111 @@
+/* .bubble{
+    position: absolute;
+    top:2em;
+}
+
+.bubble2{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.bubble1{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background-color: rgb(211, 205, 47);
+    animation: wave 3s ease-in-out infinite;
+    z-index: 999;
+}
+
+@keyframes wave{
+    0%,100%{
+        clip-path: polygon(
+      0% 47%,
+      10% 48%,
+      33% 54%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+    }
+    50% {
+        clip-path: polygon(0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+        );
+      }
+} */
+
+
+
+.circle{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(230, 228, 168);
+    border: 5px solid #282c34;
+    box-shadow: 0 0 0 5px rgb(211, 205, 47);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: .5em auto;
+}   
+
+.wave{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(211, 205, 47);
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px rgba(0,0,0,.5);
+}
+
+.wave::before,
+.wave::after{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top:0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background-color: #000;
+}
+
+.wave::before{
+    border-radius: 45%;
+    background-color: rgba(255,255,255, .5);
+    animation: wave 5s linear infinite;
+}
+
+.wave::after{
+    border-radius: 40%;
+    background-color: rgba(255,255,255,.5);
+    animation: wave 5s linear infinite;
+}
+
+@keyframes wave{
+    0%{
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+.vote-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}

@@ -1,0 +1,12 @@
+.bubble-container{
+    width:  1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    gap: 5em;
+}
