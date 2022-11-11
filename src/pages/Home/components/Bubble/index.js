@@ -26,8 +26,8 @@ const Bubble = ({perc, name}) => {
             <div>
                 <h3>{name}</h3>
             </div>
-            <div className="vote-container mt-4 d-flex gap-3 justify-content-center">
-                <Button variant="success">Up</Button>
+            <div className="vote-container mt-4 d-flex justify-content-center align-items-center">
+                <Button variant="success" className="mx-2">Up</Button>
                 <Button variant="danger">Down</Button>
             </div>
         </div>

@@ -54,8 +54,9 @@ const WalletMetamask = () => {
             <Button
                 variant="warning"
                 onClick={handleConnectWallet}
+                disabled = {account ? true : false}
             >
-                Connect!
+                {account ? "Connected!" : "Connect!"}
             </Button>
             
         </div>
