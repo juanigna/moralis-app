@@ -5,16 +5,16 @@ import "./styles.css"
 const bubbles = [
     {
         perc:50,
-        color: "red",
+        ticker:"BTC"
     },
     {
         perc: 30,
-        color:"blue"
+        ticker:"ETH"
     },
     {
         perc:80,
-        color:"#eeff44"
-    }
+        ticker:"DAI"
+    },
 ];
 const Home = () => {
   return (
@@ -28,7 +28,7 @@ const Home = () => {
             <div className='bubble-container'>
                 {
                     bubbles.map(bubble => (
-                        <Bubble perc={bubble.perc} color={bubble.color}/>
+                        <Bubble perc={bubble.perc} name={bubble.ticker}/>
                     ))
                 }
             </div>

@@ -1,7 +1,9 @@
+import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import WalletMetamask from '../WalletMetamask';
 
 
 const NavBar = () => {
@@ -12,9 +14,7 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto justify-content-end w-100">
-              <Nav.Link href="#home">Listing</Nav.Link>
-              <Nav.Link href="#link">Follow</Nav.Link>
-              <Nav.Link href="#link">Who it works</Nav.Link>
+             <WalletMetamask />
             </Nav>
           </Navbar.Collapse>
         </Container>
