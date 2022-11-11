@@ -12,7 +12,7 @@ const bubbles = [
         color:"blue"
     },
     {
-        per:80,
+        perc:80,
         color:"#eeff44"
     }
 ];
