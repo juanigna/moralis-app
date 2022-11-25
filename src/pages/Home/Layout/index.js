@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap';
-import { getMarketSentiment } from '../../../plugins/wallet';
+import AppContext from '../../../contexts/AppContext';
 import Bubble from '../components/Bubble'
 import NavBar from '../components/Navbar';
 import "./styles.css"
 const Home = () => {
-    const [tickers, setTicker] = useState({});
+    const {tickers,getTheMarket} = useContext(AppContext);
 
-    async function getTheMarket(ticker){
-        getMarketSentiment(ticker).then(result => {
-            console.log("Resultado ticker:", result);
-            setTicker({...result, ITX: Number(result)});
-            console.log(tickers);
-        })
-    }
+   
   return (
     <>
         <header>
@@ -25,8 +19,8 @@ const Home = () => {
             <div className='bubble-container'>
                 {
                     <>
-                        <Bubble perc={tickers["ITX"] ? tickers["ITX"] : "Nada aun" } name={"ITX"}/>
-                        <Button onClick={() => getTheMarket("ITX")}>Sentiment</Button>
+                        <Bubble perc={tickers["ITX"] ? tickers["ITX"] : "Nada aun" } name={"ITX"} getMarket={getTheMarket}/>                        
+                        <Bubble perc={tickers["BTC"] ? tickers["BTC"] : "Nada aun" } name={"BTC"} getMarket={getTheMarket}/>                        
                     </>
                 }
             </div>

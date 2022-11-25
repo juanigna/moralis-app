@@ -1,16 +1,16 @@
 import "./styles.css"
 import Button from 'react-bootstrap/Button';
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import AppContext from "../../../../contexts/AppContext";
 
 
-const Bubble = ({perc, name}) => {
+const Bubble = ({perc, name ,getMarket}) => {
     let color;
     if(perc > 50){
         color = "green";
     }else{
         color = "red";
     }
-
     return(
         <>
         <div className="container d-flex justify-content-center flex-column aling-items-center position-relative mt-5">
@@ -29,6 +29,7 @@ const Bubble = ({perc, name}) => {
             <div className="vote-container mt-4 d-flex justify-content-center align-items-center">
                 <Button variant="success" className="mx-2">Up</Button>
                 <Button variant="danger">Down</Button>
+                <Button variant="success" onClick={() => getMarket(name)}>Get Sentiment</Button>
             </div>
         </div>
         </>

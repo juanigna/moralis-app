@@ -1,13 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from "./pages/Home";
+import AppContextProvider from './contexts/AppContextProvider';
 
 function App() {
   return (
-    <div className="App">
-      <Home/>
-    </div>
+    <AppContextProvider>
+      <div className="App">
+        <Home/>
+      </div>
+    </AppContextProvider>
   );
 }
 
-export default App;
+export default App
+
