@@ -1,22 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Button } from 'react-bootstrap';
+import { getMarketSentiment } from '../../../plugins/wallet';
 import Bubble from '../components/Bubble'
 import NavBar from '../components/Navbar';
 import "./styles.css"
-const bubbles = [
-    {
-        perc:50,
-        ticker:"BTC"
-    },
-    {
-        perc: 30,
-        ticker:"ETH"
-    },
-    {
-        perc:80,
-        ticker:"DAI"
-    },
-];
 const Home = () => {
+    const [tickers, setTicker] = useState({});
+
+    async function getTheMarket(ticker){
+        getMarketSentiment(ticker).then(result => {
+            console.log("Resultado ticker:", result);
+            setTicker({...result, ITX: Number(result)});
+            console.log(tickers);
+        })
+    }
   return (
     <>
         <header>
@@ -27,9 +24,10 @@ const Home = () => {
             <h3>Don't know what to invest in? We have a solution!</h3>
             <div className='bubble-container'>
                 {
-                    bubbles.map(bubble => (
-                        <Bubble perc={bubble.perc} name={bubble.ticker}/>
-                    ))
+                    <>
+                        <Bubble perc={tickers["ITX"] ? tickers["ITX"] : "Nada aun" } name={"ITX"}/>
+                        <Button onClick={() => getTheMarket("ITX")}>Sentiment</Button>
+                    </>
                 }
             </div>
         </div>
