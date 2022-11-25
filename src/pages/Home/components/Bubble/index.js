@@ -1,6 +1,6 @@
 import "./styles.css"
 import Button from 'react-bootstrap/Button';
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import AppContext from "../../../../contexts/AppContext";
 
 

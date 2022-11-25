@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Button } from 'react-bootstrap';
+import React, { useContext } from 'react'
 import AppContext from '../../../contexts/AppContext';
 import Bubble from '../components/Bubble'
 import NavBar from '../components/Navbar';

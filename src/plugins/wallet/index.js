@@ -1,5 +1,4 @@
 import { ethers } from 'ethers'
-import contractAbi from "../../data/contracts/MarketSentiment.json";
 const {abi} = require("../../data/contracts/MarketSentiment.json");
 console.log(abi)
 const contractAddr = "0x6128C8e6dC774E73772811f6fA6533FCE5E8F346";
@@ -30,7 +29,7 @@ function connectWallet(){
 window.ethereum.on("accountsChanged", handleAccountsChanged);
 
 async function handleAccountsChanged(accounts){
-    if(accounts.length == 0){
+    if(accounts.length === 0){
         console.log("Please connect to Metamask");
         return false;
     }else{

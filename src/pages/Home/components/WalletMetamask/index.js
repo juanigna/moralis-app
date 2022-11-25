@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ethers } from 'ethers';
 import { Button } from 'react-bootstrap';
 import "./styles.css";
 import { connectWallet } from '../../../../plugins/wallet';
