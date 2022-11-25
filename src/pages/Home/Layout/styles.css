@@ -1,8 +1,8 @@
 .bubble-container{
-    width:  1000px;
+    width:  100%;
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     align-items: center;
     justify-content: center;
     color: #fff;
