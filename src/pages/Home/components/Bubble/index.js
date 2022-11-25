@@ -11,6 +11,9 @@ const Bubble = ({perc, name ,getMarket}) => {
     }else{
         color = "red";
     }
+
+    const {voteTicker} = useContext(AppContext);
+
     return(
         <>
         <div className="container d-flex justify-content-center flex-column aling-items-center position-relative mt-5">
@@ -27,8 +30,8 @@ const Bubble = ({perc, name ,getMarket}) => {
                 <h3>{name}</h3>
             </div>
             <div className="vote-container mt-4 d-flex justify-content-center align-items-center">
-                <Button variant="success" className="mx-2">Up</Button>
-                <Button variant="danger">Down</Button>
+                <Button variant="success" className="mx-2" onClick={() => voteTicker(name, true)}>Up</Button>
+                <Button variant="danger" onClick={() => voteTicker(name,false)}>Down</Button>
                 <Button variant="success" onClick={() => getMarket(name)}>Get Sentiment</Button>
             </div>
         </div>

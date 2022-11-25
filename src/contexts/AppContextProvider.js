@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { getMarketSentiment } from "../plugins/wallet";
+import { getMarketSentiment, voteTicker } from "../plugins/wallet";
 import AppContext from "./AppContext"
 
 const AppContextProvider = ({children}) => {
@@ -14,7 +14,7 @@ const AppContextProvider = ({children}) => {
     }
 
     return(
-        <AppContext.Provider value={{tickers, setTickers,getTheMarket}}>
+        <AppContext.Provider value={{tickers, setTickers,getTheMarket, voteTicker}}>
             {children}
         </AppContext.Provider>
     )

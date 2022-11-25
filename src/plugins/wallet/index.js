@@ -67,9 +67,15 @@ async function getMarketSentiment(ticker){
 
 }
 
+async function voteTicker(ticker, vote){
+    if(!marketSentimentInstance) {return null}
+    await marketSentimentInstance.vote(vote, ticker);
+}
+
 export{
     ethProvider,
     ethSigner,
     connectWallet,
-    getMarketSentiment
+    getMarketSentiment,
+    voteTicker
 }
