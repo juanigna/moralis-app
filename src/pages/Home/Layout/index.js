@@ -4,7 +4,7 @@ import Bubble from '../components/Bubble'
 import NavBar from '../components/Navbar';
 import "./styles.css"
 const Home = () => {
-    const {tickers,getTheMarket} = useContext(AppContext);
+    const {tickers} = useContext(AppContext);
 
    
   return (
@@ -18,8 +18,8 @@ const Home = () => {
             <div className='bubble-container'>
                 {
                     <>
-                        <Bubble perc={tickers["ITX"] ? tickers["ITX"] : "Nada aun" } name={"ITX"} getMarket={getTheMarket}/>                        
-                        <Bubble perc={tickers["BTC"] ? tickers["BTC"] : "Nada aun" } name={"BTC"} getMarket={getTheMarket}/>                        
+                        <Bubble name={"ITX"} />                        
+                        <Bubble name={"BTC"} />                        
                     </>
                 }
             </div>

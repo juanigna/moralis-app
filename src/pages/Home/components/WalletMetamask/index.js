@@ -1,19 +1,11 @@
-import { useState } from 'react';   
+import { useContext, useState } from 'react';   
 import { Button } from 'react-bootstrap';
 import "./styles.css";
-import { connectWallet } from '../../../../plugins/wallet';
+import AppContext from '../../../../contexts/AppContext';
 
 const WalletMetamask = () => {
-    const [isConnected, setThisIsConnected] = useState(false);
-    const [account, setAccount] = useState(null);
-
-    async function connectWEB3(){
-        connectWallet().then(connectionResult => {
-            console.log(connectionResult);
-            setThisIsConnected(!!connectionResult);
-            setAccount(connectionResult.account);
-        })
-    }
+    
+    const {connectWallet, account, isConnected} = useContext(AppContext)
     return (
         <div className="wallet-container d-flex justify-content-center align-items-center">
             <div className='mx-4'>
@@ -21,7 +13,7 @@ const WalletMetamask = () => {
             </div>
             <Button
                 variant="warning"
-                onClick={connectWEB3}
+                onClick={connectWallet}
                 disabled={!isConnected ? false : true}
             >
                 {isConnected ? "Connected!" : "Connect!"}
