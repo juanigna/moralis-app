@@ -4,7 +4,7 @@ import AppContext from "./AppContext"
 
 const AppContextProvider = ({children}) => {
     const [tickers, setTickers] = useState({});
-
+    
     async function getTheMarket(ticker){
         getMarketSentiment(ticker).then(result => {
             console.log("Resultado ticker:", result);
